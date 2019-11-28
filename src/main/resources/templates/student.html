@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table >
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>密码</td>
+            <td>学号</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="n : ${stulist}" >
+            <td th:text="${n.id}">编号</td>
+            <td th:text="${n.username}">姓名</td>
+            <td th:text="${n.password}">密码</td>
+            <td th:text="${n.stunumber}">学号</td>
+            <td><a th:href="|/stu/del?id=${n.id}|"> 删除</a></td>
+        </tr>
+    </table>
+    <a href="/stu/back"> 返回首页</a>
+</body>
+</html>
